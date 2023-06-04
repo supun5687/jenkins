@@ -7,7 +7,7 @@ pipeline {
     stage("build"){
       steps {
         echo 'building the application.... Dev'
-        checkout scmGit(branches: [[name: '*/develop']], extensions: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/supun5687/demo.git']])
+        checkout scmGit(branches: [[name: '*/develop']], extensions: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/supun5687/jenkins.git']])
         sh "mvn -Dmaven.test.failure.ignore=true clean package"
         }
       }
